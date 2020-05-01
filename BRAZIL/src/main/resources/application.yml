@@ -1,0 +1,33 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  profiles:
+    active: dev
+
+  session:
+    store-type: jdbc
+    timeout: 1800
+
+  main:
+    banner-mode: "off"
+    allow-bean-definition-overriding: true
+#167.179.66.174 admin13579* brazil
+  datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/wmsdb?characterEncoding=UTF-8&serverTimezone=UTC
+    username: wmsdb
+    password: 0718
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+  thymeleaf:
+    enable-spring-el-compiler: true
+    cache: false
+
+  devtools:
+    livereload:
+      enabled: true
